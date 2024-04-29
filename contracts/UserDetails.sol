@@ -21,6 +21,13 @@ contract UserDetails {
 
     event UserDeleted(address addr);
 
+    function getDetails() public view returns (User memory) {
+        require(isRegistered[msg.sender], "User doesn't exist");
+
+        User memory user = users[msg.sender];
+        return user;
+    }
+
     function register(string memory name, string memory surname, uint age) public {
         require(!isRegistered[msg.sender], "Already registered");
 
