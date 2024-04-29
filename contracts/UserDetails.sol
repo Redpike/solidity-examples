@@ -4,10 +4,10 @@ pragma solidity ^0.8.0;
 contract UserDetails {
 
     struct User {
-        string name;
-        string surname;
-        address addr;
-        uint age;
+        string _name;
+        string _surname;
+        address _addr;
+        uint _age;
     }
 
     uint256 public registeredUsers;
@@ -21,20 +21,10 @@ contract UserDetails {
 
     event UserDeleted(address addr);
 
-    function getUsers() public view returns(User[] memory) {
-        User[] memory result = new User[](registeredUsers);
-        uint256 i = 0;
-        for (address addr in users) {
-            result[i] = users[addr];
-            i++;
-        }
-        return result;
-    }
-
-    function register(string name, string surname, uint age) public {
+    function register(string memory name, string memory surname, uint age) public {
         require(!isRegistered[msg.sender], "Already registered");
 
-        User user = User(name, surname, msg.sender, age);
+        User memory user = User(name, surname, msg.sender, age);
         users[msg.sender] = user;
         isRegistered[msg.sender] = true;
 
@@ -42,23 +32,23 @@ contract UserDetails {
         emit UserRegistered(msg.sender);
     }
 
-    function modify(string name, string surname, uint age) public {
+    function modify(string memory name, string memory surname, uint age) public {
         require(isRegistered[msg.sender], "User doesn't exist");
 
-        users[msg.sender].name = name;
-        users[msg.sender].surname = surname;
-        users[msg.sender].age = age;
+        users[msg.sender]._name = name;
+        users[msg.sender]._surname = surname;
+        users[msg.sender]._age = age;
 
         emit UserModified(msg.sender);
     }
 
-    function unregister(address addr) public {
+    function unregister(address _addr) public {
         require(isRegistered[msg.sender], "User doesn't exist");
 
-        delete (users[addr]);
+        delete (users[_addr]);
         isRegistered[msg.sender] = false;
 
         registeredUsers--;
-        emit UserDeleted(addr);
+        emit UserDeleted(_addr);
     }
 }
