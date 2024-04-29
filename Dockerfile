@@ -1,5 +1,5 @@
 # Start with a base image containing NodeJS
-FROM node:18.19-alpine
+FROM node:18.20-alpine
 
 COPY ./contracts /app/contracts
 COPY ./scripts /app/scripts
