@@ -6,6 +6,10 @@
 
 Directory that contains sample Smart Contracts for deploying and testing on Your Ethereum network.
 
+### 1.2. Scripts
+
+Custom helper scripts that use Hardhat for easier connection and deployment with Ethereum network.
+
 ## 2. Development Environment
 
 Build Ganache docker container:
