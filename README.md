@@ -55,8 +55,40 @@ Compile smart contracts:
 npx hardhat compile
 ```
 
-Deploy smart contract on Your local blockchain:
+Deploy smart contract on Your local blockchain (based on Smart Contract name):
 
 ```shell
 npx hardhat run scripts/deploy.ts --network ganache
 ```
+
+## 3. Testing
+
+### 3.1. Remix IDE
+
+[Download here](https://github.com/ethereum/remix-desktop)
+
+Remix IDE Hello screen:
+
+![Remix IDE Hello screen](misc/remix1.png)
+
+Select Smart Contract:
+
+![Remix IDE Hello screen](misc/remix2.png)
+
+Compile:
+
+![Remix IDE Hello screen](misc/remix3.png)
+
+Connect with Your Ethereum network:
+
+![Remix IDE Hello screen](misc/remix4.png)
+
+Deploy Smart Contract by script in source code or by Remix IDE and use Your Smart Contract functionality:
+
+![Remix IDE Hello screen](misc/remix5.png)
+
+### 3.2. Your software
+
+Write software which allows You to integrate with Your deployed Smart Contracts and Your Ethereum network.
+
+Sample (for Java and Typescript) - [repository](https://github.com/redpike/blockchain-hello-world)
