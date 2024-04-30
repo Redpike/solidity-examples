@@ -2,7 +2,9 @@
 
 ## 1. Project structure
 
-TBA
+### 1.1. Contracts
+
+Directory that contains sample Smart Contracts for deploying and testing on Your Ethereum network.
 
 ## 2. Development Environment
 
