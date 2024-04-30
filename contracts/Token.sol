@@ -15,9 +15,9 @@ library Balances {
 
 contract Token {
 
-    mapping (address => uint256) public balances;
+    mapping (address => uint256) private balances;
     using Balances for *;
-    mapping (address => mapping (address => uint256)) public allowed;
+    mapping (address => mapping (address => uint256)) private allowed;
 
     event Transfer(address from, address to, uint amount);
     event Approval(address owner, address spender, uint amount);
